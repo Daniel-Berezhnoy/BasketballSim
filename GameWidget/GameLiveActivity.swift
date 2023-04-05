@@ -27,29 +27,43 @@ struct GameLiveActivity: Widget {
 
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
+                
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    HStack {
+                        Image("warriors")
+                            .teamLogoModifier(frame: 40)
+                        
+                        Text("100")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                    }
                 }
                 
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    HStack {
+                        Text("100")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        
+                        Image("bulls")
+                            .teamLogoModifier(frame: 40)
+                    }
                 }
                 
                 DynamicIslandExpandedRegion(.bottom) {
                     Text("Bottom")
-                    // more content
                 }
-                
-                DynamicIslandExpandedRegion(.bottom) {
+
+                DynamicIslandExpandedRegion(.center) {
                     Text("Center")
                 }
                 
             } compactLeading: {
                 Text("L")
+                
             } compactTrailing: {
                 Text("T")
+                
             } minimal: {
                 Text("Min")
             }
@@ -62,10 +76,7 @@ struct GameLiveActivity: Widget {
 struct GameLiveActivity_Previews: PreviewProvider {
     
     static let attributes = GameAttributes(homeTeam: "Warriors", awayTeam: "Bulls")
-    static let contentState = GameAttributes.ContentState(gameState: GameState(homeScore: 105,
-                                                                               awayScore: 96,
-                                                                               scoringTeamName: "Warriors",
-                                                                               lastAction: "S. Curry drains a 3"))
+    static let contentState = GameAttributes.ContentState(gameState: GameState(homeScore: 105, awayScore: 96, scoringTeamName: "Warriors", lastAction: "S. Curry drains a 3"))
     
     static var previews: some View {
         attributes
