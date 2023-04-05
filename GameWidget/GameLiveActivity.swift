@@ -1,5 +1,5 @@
 //
-//  GameWidgetLiveActivity.swift
+//  GameLiveActivity.swift
 //  GameWidget
 //
 //  Created by Daniel Berezhnoy on 4/5/23.
@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct GameWidgetAttributes: ActivityAttributes {
+struct GameAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var value: Int
@@ -19,9 +19,9 @@ struct GameWidgetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct GameWidgetLiveActivity: Widget {
+struct GameLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: GameWidgetAttributes.self) { context in
+        ActivityConfiguration(for: GameAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("Hello")
@@ -36,13 +36,20 @@ struct GameWidgetLiveActivity: Widget {
                 DynamicIslandExpandedRegion(.leading) {
                     Text("Leading")
                 }
+                
                 DynamicIslandExpandedRegion(.trailing) {
                     Text("Trailing")
                 }
+                
                 DynamicIslandExpandedRegion(.bottom) {
                     Text("Bottom")
                     // more content
                 }
+                
+                DynamicIslandExpandedRegion(.bottom) {
+                    Text("Center")
+                }
+                
             } compactLeading: {
                 Text("L")
             } compactTrailing: {
@@ -56,9 +63,9 @@ struct GameWidgetLiveActivity: Widget {
     }
 }
 
-struct GameWidgetLiveActivity_Previews: PreviewProvider {
-    static let attributes = GameWidgetAttributes(name: "Me")
-    static let contentState = GameWidgetAttributes.ContentState(value: 3)
+struct GameLiveActivity_Previews: PreviewProvider {
+    static let attributes = GameAttributes(name: "Me")
+    static let contentState = GameAttributes.ContentState(value: 3)
 
     static var previews: some View {
         attributes

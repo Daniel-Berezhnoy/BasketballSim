@@ -10,7 +10,7 @@
 		B92746BA29DE1FD4007F916E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92746B929DE1FD4007F916E /* WidgetKit.framework */; };
 		B92746BC29DE1FD4007F916E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92746BB29DE1FD4007F916E /* SwiftUI.framework */; };
 		B92746BF29DE1FD4007F916E /* GameWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92746BE29DE1FD4007F916E /* GameWidgetBundle.swift */; };
-		B92746C129DE1FD4007F916E /* GameWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92746C029DE1FD4007F916E /* GameWidgetLiveActivity.swift */; };
+		B92746C129DE1FD4007F916E /* GameLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92746C029DE1FD4007F916E /* GameLiveActivity.swift */; };
 		B92746C329DE1FD4007F916E /* GameWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92746C229DE1FD4007F916E /* GameWidget.swift */; };
 		B92746C529DE1FD5007F916E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92746C429DE1FD5007F916E /* Assets.xcassets */; };
 		B92746C929DE1FD5007F916E /* GameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B92746B729DE1FD4007F916E /* GameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -55,7 +55,7 @@
 		B92746B929DE1FD4007F916E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B92746BB29DE1FD4007F916E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B92746BE29DE1FD4007F916E /* GameWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWidgetBundle.swift; sourceTree = "<group>"; };
-		B92746C029DE1FD4007F916E /* GameWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		B92746C029DE1FD4007F916E /* GameLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLiveActivity.swift; sourceTree = "<group>"; };
 		B92746C229DE1FD4007F916E /* GameWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWidget.swift; sourceTree = "<group>"; };
 		B92746C429DE1FD5007F916E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B92746C629DE1FD5007F916E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B92746BE29DE1FD4007F916E /* GameWidgetBundle.swift */,
-				B92746C029DE1FD4007F916E /* GameWidgetLiveActivity.swift */,
+				B92746C029DE1FD4007F916E /* GameLiveActivity.swift */,
 				B92746C229DE1FD4007F916E /* GameWidget.swift */,
 				B92746C429DE1FD5007F916E /* Assets.xcassets */,
 				B92746C629DE1FD5007F916E /* Info.plist */,
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92746C329DE1FD4007F916E /* GameWidget.swift in Sources */,
-				B92746C129DE1FD4007F916E /* GameWidgetLiveActivity.swift in Sources */,
+				B92746C129DE1FD4007F916E /* GameLiveActivity.swift in Sources */,
 				B92746BF29DE1FD4007F916E /* GameWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
