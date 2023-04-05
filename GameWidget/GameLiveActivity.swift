@@ -23,12 +23,7 @@ struct GameAttributes: ActivityAttributes {
 struct GameLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: GameAttributes.self) { context in
-            // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
+            LiveActivityView()
 
         } dynamicIsland: { context in
             DynamicIsland {
@@ -64,22 +59,26 @@ struct GameLiveActivity: Widget {
     }
 }
 
-//struct GameLiveActivity_Previews: PreviewProvider {
-//    static let attributes = GameAttributes(name: "Me")
-//    static let contentState = GameAttributes.ContentState(value: 3)
-//
-//    static var previews: some View {
-//        attributes
-//            .previewContext(contentState, viewKind: .dynamicIsland(.compact))
-//            .previewDisplayName("Island Compact")
-//        attributes
-//            .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
-//            .previewDisplayName("Island Expanded")
-//        attributes
-//            .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
-//            .previewDisplayName("Minimal")
-//        attributes
-//            .previewContext(contentState, viewKind: .content)
-//            .previewDisplayName("Notification")
-//    }
-//}
+struct GameLiveActivity_Previews: PreviewProvider {
+    
+    static let attributes = GameAttributes(homeTeam: "Warriors", awayTeam: "Bulls")
+    static let contentState = GameAttributes.ContentState(gameState: GameState(homeScore: 105,
+                                                                               awayScore: 96,
+                                                                               scoringTeamName: "Warriors",
+                                                                               lastAction: "S. Curry drains a 3"))
+    
+    static var previews: some View {
+        attributes
+            .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+            .previewDisplayName("Island Compact")
+        attributes
+            .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+            .previewDisplayName("Island Expanded")
+        attributes
+            .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+            .previewDisplayName("Minimal")
+        attributes
+            .previewContext(contentState, viewKind: .content)
+            .previewDisplayName("Notification")
+    }
+}

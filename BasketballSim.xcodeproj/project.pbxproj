@@ -17,6 +17,7 @@
 		B92746CE29DE2497007F916E /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D6392917E4110097D139 /* GameState.swift */; };
 		B92746D129DE27DB007F916E /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92746D029DE27DB007F916E /* LiveActivityView.swift */; };
 		B92746D229DE283E007F916E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67D6252917E3520097D139 /* Assets.xcassets */; };
+		B92746D329DE2A0F007F916E /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D6352917E3E40097D139 /* Image+Ext.swift */; };
 		ED67D6222917E3510097D139 /* BasketballSimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D6212917E3510097D139 /* BasketballSimApp.swift */; };
 		ED67D6262917E3520097D139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67D6252917E3520097D139 /* Assets.xcassets */; };
 		ED67D6292917E3520097D139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67D6282917E3520097D139 /* Preview Assets.xcassets */; };
@@ -293,6 +294,7 @@
 				B92746D129DE27DB007F916E /* LiveActivityView.swift in Sources */,
 				B92746C129DE1FD4007F916E /* GameLiveActivity.swift in Sources */,
 				B92746BF29DE1FD4007F916E /* GameWidgetBundle.swift in Sources */,
+				B92746D329DE2A0F007F916E /* Image+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
