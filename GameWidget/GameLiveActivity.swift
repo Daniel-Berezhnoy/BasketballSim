@@ -41,7 +41,7 @@ struct GameLiveActivity: Widget {
                 
                 DynamicIslandExpandedRegion(.trailing) {
                     HStack {
-                        Text("100")
+                        Text("88")
                             .font(.title)
                             .fontWeight(.semibold)
                         
@@ -51,11 +51,12 @@ struct GameLiveActivity: Widget {
                 }
                 
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                }
-
-                DynamicIslandExpandedRegion(.center) {
-                    Text("Center")
+                    Label {
+                        Text("S. Curry drains a 3")
+                    } icon: {
+                        Image("warriors")
+                            .teamLogoModifier(frame: 20)
+                    }
                 }
                 
             } compactLeading: {
