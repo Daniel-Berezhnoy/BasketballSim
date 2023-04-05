@@ -60,10 +60,22 @@ struct GameLiveActivity: Widget {
                 }
                 
             } compactLeading: {
-                Text("L")
+                HStack {
+                    Image("warriors")
+                        .teamLogoModifier()
+                    
+                    Text("137")
+                        .fontWeight(.semibold)
+                }
                 
             } compactTrailing: {
-                Text("T")
+                HStack {
+                    Text("109") 
+                        .fontWeight(.semibold)
+                    
+                    Image("bulls")
+                        .teamLogoModifier()
+                }
                 
             } minimal: {
                 Text("Min")
