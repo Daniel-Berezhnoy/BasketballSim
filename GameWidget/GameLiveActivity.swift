@@ -12,11 +12,12 @@ import SwiftUI
 struct GameAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        var value: Int
+        var gameState: GameState
     }
 
     // Fixed non-changing properties about your activity go here!
-    var name: String
+    var homeTeam: String
+    var awayTeam: String
 }
 
 struct GameLiveActivity: Widget {
@@ -63,22 +64,22 @@ struct GameLiveActivity: Widget {
     }
 }
 
-struct GameLiveActivity_Previews: PreviewProvider {
-    static let attributes = GameAttributes(name: "Me")
-    static let contentState = GameAttributes.ContentState(value: 3)
-
-    static var previews: some View {
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.compact))
-            .previewDisplayName("Island Compact")
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
-            .previewDisplayName("Island Expanded")
-        attributes
-            .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
-            .previewDisplayName("Minimal")
-        attributes
-            .previewContext(contentState, viewKind: .content)
-            .previewDisplayName("Notification")
-    }
-}
+//struct GameLiveActivity_Previews: PreviewProvider {
+//    static let attributes = GameAttributes(name: "Me")
+//    static let contentState = GameAttributes.ContentState(value: 3)
+//
+//    static var previews: some View {
+//        attributes
+//            .previewContext(contentState, viewKind: .dynamicIsland(.compact))
+//            .previewDisplayName("Island Compact")
+//        attributes
+//            .previewContext(contentState, viewKind: .dynamicIsland(.expanded))
+//            .previewDisplayName("Island Expanded")
+//        attributes
+//            .previewContext(contentState, viewKind: .dynamicIsland(.minimal))
+//            .previewDisplayName("Minimal")
+//        attributes
+//            .previewContext(contentState, viewKind: .content)
+//            .previewDisplayName("Notification")
+//    }
+//}
