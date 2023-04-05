@@ -70,7 +70,7 @@ struct GameLiveActivity: Widget {
                 
             } compactTrailing: {
                 HStack {
-                    Text("109") 
+                    Text("109")
                         .fontWeight(.semibold)
                     
                     Image("bulls")
@@ -78,7 +78,8 @@ struct GameLiveActivity: Widget {
                 }
                 
             } minimal: {
-                Text("Min")
+                Image("warriors")
+                    .teamLogoModifier()
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
