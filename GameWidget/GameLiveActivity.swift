@@ -22,6 +22,7 @@ struct GameLiveActivity: Widget {
                     HStack {
                         Image(context.attributes.homeTeam)
                             .teamLogoModifier(frame: 40)
+                            .contentTransition(.identity)
                         
                         Text("\(context.state.gameState.homeScore)")
                             .font(.title)
@@ -37,6 +38,7 @@ struct GameLiveActivity: Widget {
                         
                         Image(context.attributes.awayTeam)
                             .teamLogoModifier(frame: 40)
+                            .contentTransition(.identity)
                     }
                 }
                 
@@ -46,6 +48,7 @@ struct GameLiveActivity: Widget {
                     } icon: {
                         Image(context.state.gameState.scoringTeamName)
                             .teamLogoModifier(frame: 20)
+                            .contentTransition(.identity)
                     }
                 }
                 
@@ -53,6 +56,7 @@ struct GameLiveActivity: Widget {
                 HStack {
                     Image(context.attributes.homeTeam)
                         .teamLogoModifier()
+                        .contentTransition(.identity)
                     
                     Text("\(context.state.gameState.homeScore)")
                         .fontWeight(.semibold)
@@ -65,11 +69,13 @@ struct GameLiveActivity: Widget {
                     
                     Image(context.attributes.awayTeam)
                         .teamLogoModifier()
+                        .contentTransition(.identity)
                 }
                 
             } minimal: {
                 Image(context.state.gameState.winningTeamName)
                     .teamLogoModifier()
+                    .contentTransition(.identity)
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)

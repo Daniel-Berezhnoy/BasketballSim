@@ -39,6 +39,7 @@ struct LiveActivityView: View {
         HStack {
             Image(context.attributes.homeTeam)
                 .teamLogoModifier(frame: 60)
+                .contentTransition(.identity)
             
             Text("\(context.state.gameState.homeScore)")
                 .font(.system(size: 40, weight: .bold))
@@ -52,6 +53,7 @@ struct LiveActivityView: View {
             
             Image(context.attributes.awayTeam)
                 .teamLogoModifier(frame: 60)
+                .contentTransition(.identity)
         }
     }
     
