@@ -26,6 +26,7 @@ struct LiveActivityView: View {
     var background: some View {
         Image("activity-background")
             .resizable()
+            .contentTransition(.identity)
         
             .overlay {
                 ContainerRelativeShape()

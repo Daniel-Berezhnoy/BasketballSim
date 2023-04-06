@@ -13,6 +13,7 @@ extension Image {
         self
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .contentTransition(.identity)
             .frame(width: frame, height: frame)
     }
 }
