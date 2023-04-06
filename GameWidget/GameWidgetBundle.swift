@@ -12,6 +12,8 @@ import SwiftUI
 struct GameWidgetBundle: WidgetBundle {
     var body: some Widget {
         GameWidget()
-        GameLiveActivity()
+        if #available(iOS 16.1, *) {
+            GameLiveActivity()
+        }
     }
 }

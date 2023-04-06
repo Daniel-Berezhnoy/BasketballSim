@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ActivityKit
 
 final class GameModel: ObservableObject, GameSimulatorDelegate {
     
@@ -13,6 +14,8 @@ final class GameModel: ObservableObject, GameSimulatorDelegate {
                                          awayScore: 0,
                                          scoringTeamName: "",
                                          lastAction: "")
+    
+    let liveActivity: Activity<GameAttributes>? = nil
     let simulator = GameSimulator()
     
     init() {
