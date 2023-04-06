@@ -9,6 +9,8 @@ import SwiftUI
 import WidgetKit
 
 struct LiveActivityView: View {
+    let context: ActivityViewContext<GameAttributes>
+    
     var body: some View {
         ZStack {
             background
@@ -65,9 +67,9 @@ struct LiveActivityView: View {
     }
 }
 
-struct LiveActivityView_Previews: PreviewProvider {
-    static var previews: some View {
-        LiveActivityView()
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
-    }
-}
+//struct LiveActivityView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LiveActivityView()
+//            .previewContext(WidgetPreviewContext(family: .systemMedium))
+//    }
+//}

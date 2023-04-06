@@ -11,68 +11,85 @@ import SwiftUI
 
 struct GameLiveActivity: Widget {
     var body: some WidgetConfiguration {
+        
         ActivityConfiguration(for: GameAttributes.self) { context in
-            LiveActivityView()
+            LiveActivityView(context: context)
 
         } dynamicIsland: { context in
             DynamicIsland {
                 
-                DynamicIslandExpandedRegion(.leading) {
-                    HStack {
-                        Image("warriors")
-                            .teamLogoModifier(frame: 40)
-                        
-                        Text("100")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                    }
-                }
-                
-                DynamicIslandExpandedRegion(.trailing) {
-                    HStack {
-                        Text("88")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                        
-                        Image("bulls")
-                            .teamLogoModifier(frame: 40)
-                    }
-                }
-                
-                DynamicIslandExpandedRegion(.bottom) {
-                    Label {
-                        Text("S. Curry drains a 3")
-                    } icon: {
-                        Image("warriors")
-                            .teamLogoModifier(frame: 20)
-                    }
-                }
+                DynamicIslandExpandedRegion(.leading) { expandedLeadingView }
+                DynamicIslandExpandedRegion(.trailing) { expandedTrailingView }
+                DynamicIslandExpandedRegion(.bottom) { expandedBottomView }
                 
             } compactLeading: {
-                HStack {
-                    Image("warriors")
-                        .teamLogoModifier()
-                    
-                    Text("137")
-                        .fontWeight(.semibold)
-                }
+                compactLeadingView
                 
             } compactTrailing: {
-                HStack {
-                    Text("109")
-                        .fontWeight(.semibold)
-                    
-                    Image("bulls")
-                        .teamLogoModifier()
-                }
+                compactTrailingView
                 
             } minimal: {
-                Image("warriors")
-                    .teamLogoModifier()
+                minimalView
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
+    }
+    
+    var expandedLeadingView: some View {
+        HStack {
+            Image("warriors")
+                .teamLogoModifier(frame: 40)
+            
+            Text("100")
+                .font(.title)
+                .fontWeight(.semibold)
+        }
+    }
+    
+    var expandedTrailingView: some View {
+        HStack {
+            Text("88")
+                .font(.title)
+                .fontWeight(.semibold)
+            
+            Image("bulls")
+                .teamLogoModifier(frame: 40)
+        }
+    }
+    
+    var expandedBottomView: some View {
+        Label {
+            Text("S. Curry drains a 3")
+        } icon: {
+            Image("warriors")
+                .teamLogoModifier(frame: 20)
+        }
+    }
+    
+    var compactLeadingView: some View {
+        HStack {
+            Image("warriors")
+                .teamLogoModifier()
+            
+            Text("137")
+                .fontWeight(.semibold)
+        }
+    }
+    
+    var compactTrailingView: some View {
+        HStack {
+            Text("109")
+                .fontWeight(.semibold)
+            
+            Image("bulls")
+                .teamLogoModifier()
+        }
+    }
+    
+    var minimalView: some View {
+        Image("warriors")
+            .teamLogoModifier()
     }
 }
 
