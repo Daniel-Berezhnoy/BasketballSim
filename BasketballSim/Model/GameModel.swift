@@ -15,7 +15,7 @@ final class GameModel: ObservableObject, GameSimulatorDelegate {
                                          scoringTeamName: "",
                                          lastAction: "")
     
-    let liveActivity: Activity<GameAttributes>? = nil
+    var liveActivity: Activity<GameAttributes>? = nil
     let simulator = GameSimulator()
     
     init() {
@@ -24,13 +24,27 @@ final class GameModel: ObservableObject, GameSimulatorDelegate {
     
     func startLiveActivity() {
         
+        let attributes = GameAttributes(homeTeam: "warriors", awayTeam: "bulls")
+        let currentGameState = GameAttributes.ContentState(gameState: gameState)
+        
+        do {
+            liveActivity = try Activity.request(attributes: attributes, contentState: currentGameState)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func didUpdate(gameState: GameState) {
         self.gameState = gameState
+        
+        Task {
+            await liveActivity?.update(using: .init(gameState: gameState))
+        }
     }
     
     func didCompleteGame() {
-        
+        Task {
+            await liveActivity?.end(using: .init(gameState: simulator.endGame()))
+        }
     }
 }
