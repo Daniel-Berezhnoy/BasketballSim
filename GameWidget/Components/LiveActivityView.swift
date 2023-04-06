@@ -36,40 +36,33 @@ struct LiveActivityView: View {
     
     var score: some View {
         HStack {
-            Image("warriors")
+            Image(context.attributes.homeTeam)
                 .teamLogoModifier(frame: 60)
             
-            Text("105")
+            Text("\(context.state.gameState.homeScore)")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundColor(.white)
             
             Spacer()
             
-            Text("101")
+            Text("\(context.state.gameState.awayScore)")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundColor(.black.opacity(0.75))
             
-            Image("bulls")
+            Image(context.attributes.awayTeam)
                 .teamLogoModifier(frame: 60)
         }
     }
     
     var lastAction: some View {
         HStack {
-            Image("warriors")
+            Image(context.state.gameState.scoringTeamName)
                 .teamLogoModifier(frame: 20)
             
-            Text("S. Curry drains a 3")
+            Text(context.state.gameState.lastAction)
                 .font(.callout)
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
         }
     }
 }
-
-//struct LiveActivityView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LiveActivityView()
-//            .previewContext(WidgetPreviewContext(family: .systemMedium))
-//    }
-//}
